@@ -1,5 +1,6 @@
 import { EVehicleType } from "@/@types/global";
 import ContainerComponent from "@/components/Container/ContainerComponent";
+import { FormProvider } from '@/contexts/FormContext'
 
 async function getBrands() {
   try {
@@ -17,7 +18,9 @@ export default async function Home() {
   const brandsData = await getBrands();
   return (
     <main>
-      <ContainerComponent brands={brandsData} />
+      <FormProvider>
+        <ContainerComponent brands={brandsData} />
+      </FormProvider>
     </main>
   )
 }

@@ -43,7 +43,9 @@ const FormComponent: FunctionComponent<IFormComponentProps> = ({ fields, onSubmi
   return (
     <form onSubmit={handleSubmit}>
       {fields.map(field => field.id !== "year" ? (
-        <FormControl key={field.id} className="field">
+        <FormControl key={field.id} sx={{
+          paddingY: "12px"
+        }}>
           <InputLabel id={`select-label-${field.id}`} shrink={false}>{field.label}</InputLabel>
           <Select
             labelId={`select-label-${field.id}`}
@@ -61,7 +63,9 @@ const FormComponent: FunctionComponent<IFormComponentProps> = ({ fields, onSubmi
           </Select>
         </FormControl>
       ) : formValues.model !== "" && formValues.model !== undefined && (
-        <FormControl key={field.id} className="field">
+        <FormControl key={field.id} sx={{
+          paddingY: "12px"
+        }}>
           <InputLabel id={`select-label-${field.id}`} shrink={false}>{field.label}</InputLabel>
           <Select
             labelId={`select-label-${field.id}`}
@@ -81,7 +85,22 @@ const FormComponent: FunctionComponent<IFormComponentProps> = ({ fields, onSubmi
       )
       )}
       <div className="button-wrapper">
-        <Button className="button-submit" variant="contained" type="submit" size="large" disabled={!isFormValid}>{submitButtonLabel}</Button>
+        <Button
+          sx={{
+            backgroundColor: "#723bb2",
+            width: "fit-content",
+
+            "&:hover": {
+              backgroundColor: "#612aa1"
+            }
+          }}
+          variant="contained"
+          type="submit"
+          size="large"
+          disabled={!isFormValid}
+        >
+          {submitButtonLabel}
+        </Button>
       </div>
     </form>
   );

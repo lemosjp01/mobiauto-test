@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import './globals.css'
-import { FormProvider } from '@/contexts/FormContext'
 
 const roboto = Roboto({ style: "normal", subsets: ["latin"], weight: "400" })
 
@@ -16,11 +15,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className={roboto.className}>
-        <FormProvider>
-          {children}
-        </FormProvider>
+        {children}
       </body>
     </html>
   )

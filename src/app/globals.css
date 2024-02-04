@@ -16,10 +16,6 @@ form {
   padding: 24px 36px;
 }
 
-.field {
-  padding: 12px 0px;
-}
-
 .menu-item {
   padding-top: 12px;
   text-align: left; /* Alinhamento à esquerda quando selecionado */
@@ -49,15 +45,6 @@ form {
   padding: 24px 0px 18px 0px;
   align-items: center;
   justify-content: center;
-}
-
-.button-submit {
-  background-color: #723bb2;
-  width: fit-content;
-
-  &:hover {
-    background-color: #612aa1;
-  }
 }
 
 .chip-wrapper {
